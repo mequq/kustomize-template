@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp
+  name: app
 spec:
   replicas: 10
   selector:
     matchLabels:
-      app: myapp
+      app: app
   template:
     metadata:
       labels:
-        app: myapp
+        app: app
     spec:
       containers:
       - name: app
@@ -21,3 +21,4 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 8080
+          name: http
